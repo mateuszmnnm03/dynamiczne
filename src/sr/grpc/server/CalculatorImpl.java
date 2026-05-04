@@ -13,7 +13,7 @@ public class CalculatorImpl extends CalculatorImplBase
 		int val = request.getArg1() + request.getArg2();
 		ArithmeticOpResult result = ArithmeticOpResult.newBuilder().setRes(val).build();
 		if(request.getArg1() > 100 && request.getArg2() > 100) try { Thread.sleep(5000); } catch(java.lang.InterruptedException ex) { }
-		responseObserver.onNext(result); // wysyla odpowiedz
+		responseObserver.onNext(result); // serializuje, wysyla odpowiedz
 		responseObserver.onCompleted(); // konczy rpc
 	}
 

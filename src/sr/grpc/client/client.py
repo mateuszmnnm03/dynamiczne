@@ -1,7 +1,7 @@
 import grpc
 from grpc_reflection.v1alpha import reflection_pb2, reflection_pb2_grpc
 
-channel = grpc.insecure_channel("localhost:50051")
+channel = grpc.insecure_channel("localhost:50051") # polaczenie sieciowe do serwera
 
 stub = reflection_pb2_grpc.ServerReflectionStub(channel)
 
@@ -41,7 +41,7 @@ method = "/streaming.StreamTester/GeneratePrimeNumbers"
 
 
 request_bytes = b'\x08\x0e' 
-
+a
 response_iterator = channel.unary_stream(method)(request_bytes)
 
 print("Prime numbers:")
